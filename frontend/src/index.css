@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+:root {
+  --pastel-green: #75f5c6;
+  --pastel-blue: #7591f5;
+  --pastel-pink: #ee75f5;
+  --pastel-red: #f575a2;
+  --pastel-yellow: #f5db75;
+
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+body {
+  font-family: "Caprasimo" ,Arial, Helvetica, sans-serif;
+  background-color: #111;
+  color: #F8F8F8;
+}
