@@ -1,5 +1,6 @@
 import { Router } from "express";
 import Entry, { IEntry } from "../models/Entry";
+import mongoose from "mongoose";
 
 const router = Router();
 
@@ -23,5 +24,27 @@ router.post("/", async (req, res) => {
         res.status(400).json({ message: "Invalid data" });
     }
 });
+
+router.put("/:id", async (req, res) => {
+    try {
+        const { id } = req.params;
+        
+        if (!mongoose.Types.ObjectId.isValid(id)) {
+            return res.status(400).json({ error: "Invalid ID format" });
+        }
+        
+        const updatedEntry = await Entry.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            { new: true }
+        );
+
+        if (!updatedEntry) return res.status(404).json({ message: "Entry not found" });
+        res.json(updatedEntry);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Server error" });
+    }
+})
 
 export default router;
