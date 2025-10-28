@@ -1,22 +1,27 @@
 import { Router } from "express";
-import fs from "fs";
-import path from "path";
+import Entry, { IEntry } from "../models/Entry";
 
 const router = Router();
-const filePath = path.resolve("./src/data/entries.json");
 
-router.get("/", (req, res) => {
-    const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-    res.json(data);
+router.get("/", async (req, res) => {
+    try {
+        const entries = await Entry.find();
+        res.json(entries);
+    } catch (error) {
+        res.status(500).json({ message: "Server error "});
+    }
 });
 
-router.post("/", (req, res) => {
-    const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-    const newEntry = req.body;
 
-    data.push(newEntry);
-    fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
-    res.status(201).json(newEntry);
-})
+router.post("/", async (req, res) => {
+    try {
+        const { restaurant, suggestedBy } = req.body;
+        const newEntry = new Entry({ restaurant, suggestedBy });
+        await newEntry.save();
+        res.status(201).json(newEntry);
+    } catch (error) {
+        res.status(400).json({ message: "Invalid data" });
+    }
+});
 
 export default router;
