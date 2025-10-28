@@ -47,4 +47,24 @@ router.put("/:id", async (req, res) => {
     }
 })
 
+router.delete("/:id", async (req, res) => {
+    try {
+        const { id } = req.params;
+        
+        if (!mongoose.Types.ObjectId.isValid(id)) {
+            return res.status(400).json({ error: "Invalid ID format" });
+        }
+
+        const deletedEntry = await Entry.findByIdAndDelete(
+            req.params.id
+        );
+
+        if (!deletedEntry) return res.status(404).json({ message: "Entry not found" });
+        res.json({ message: "Entry deleted", entry: deletedEntry });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Server error" });
+    }
+})
+
 export default router;
