@@ -1,3 +1,4 @@
+import { EntriesList } from "./EntriesList";
 import { NewEntryForm } from "./NewEntryForm";
 import { Wheel } from "./Wheel";
 import { useEntries } from "./hooks/useEntries";
@@ -15,6 +16,7 @@ function App() {
           </h1>
         <Wheel entries={entries} />
         <NewEntryForm />
+        <EntriesList />
       </main>
       <footer className="w-full text-center">
         <p>Sound Effects provided by <a href="https://gfxsounds.com/sound-effect/fortune-wheel-spinning/">Gfx Sounds</a></p>
