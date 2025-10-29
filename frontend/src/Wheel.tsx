@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useReward } from "react-rewards";
 import { useEntriesContext } from "./context/EntriesContext";
 
