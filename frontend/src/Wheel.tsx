@@ -110,13 +110,13 @@ export const Wheel = () => {
                 <div className="text-4xl flex flex-col items-center">
                     <span>
                         Winner:{" "}
-                        <span style={{ color: winner.colorClass }}>
+                        <span className="font-bold" style={{ color: winner.colorClass }}>
                             {winner.restaurant}
                         </span>
                     </span>
                     {winner.suggestedBy && (
                         <span className="text-xl opacity-70">
-                            (suggested by {winner.suggestedBy})
+                            (Suggested by {winner.suggestedBy})
                         </span>
                     )}
                 </div>

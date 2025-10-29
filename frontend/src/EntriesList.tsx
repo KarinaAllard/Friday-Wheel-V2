@@ -21,7 +21,7 @@ export const EntriesList = () => {
     }
 
     if (loading) return <p>Loading...</p>;
-    if (entries.length === 0) return <p>There are no entries! Feel free to submt one.</p>
+    if (entries.length === 0) return <p>There are no entries! Feel free to submit one.</p>
 
     return (
 
