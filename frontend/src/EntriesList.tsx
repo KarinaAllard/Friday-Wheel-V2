@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useEntriesContext } from "./context/EntriesContext";
 
 export const EntriesList = () => {
-    const { entries, deleteEntry, updateEntry } = useEntriesContext();
+    const { entries, deleteEntry, updateEntry, loading } = useEntriesContext();
     const [editingId, setEditingId] = useState<string | null>(null);
     const [formData, setFormData] = useState({ restaurant: "", suggestedBy: "" });
 
@@ -20,6 +20,7 @@ export const EntriesList = () => {
         setEditingId(null);
     }
 
+    if (loading) return <p>Loading...</p>;
     if (entries.length === 0) return <p>There are no entries! Feel free to submt one.</p>
 
     return (
