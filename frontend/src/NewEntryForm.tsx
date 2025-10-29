@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { useEntries } from "./hooks/useEntries";
+import { useEntriesContext } from "./context/EntriesContext";
 
 export const NewEntryForm = () => {
-	const { createEntry } = useEntries();
+	const { createEntry } = useEntriesContext();
 	const [restaurant, setRestaurant] = useState("");
 	const [suggestedBy, setSuggestedBy] = useState("");
 

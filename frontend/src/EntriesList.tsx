@@ -1,7 +1,7 @@
-import { useEntries } from "./hooks/useEntries"
+import { useEntriesContext } from "./context/EntriesContext";
 
 export const EntriesList = () => {
-    const { entries, deleteEntry } = useEntries();
+    const { entries, deleteEntry } = useEntriesContext();
 
     if (entries.length === 0) return <p>There are no entries! Feel free to submt one.</p>
 
