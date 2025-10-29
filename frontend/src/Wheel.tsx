@@ -16,11 +16,11 @@ export const Wheel = () => {
     const [winner, setWinner] = useState<Winner>(null);
 
     const colors = [
-        "var(--pastel-green)",
-        "var(--pastel-blue)",
-        "var(--pastel-pink)",
-        "var(--pastel-red)",
-        "var(--pastel-yellow)",
+        "var(--pastel-purple)",
+        "var(--pastel-teal)",
+        "var(--pastel-lilac)",
+        "var(--pastel-magenta)",
+        "var(--pastel-indigo)",
     ];
 
     const spinDuration = 4;
@@ -33,11 +33,6 @@ export const Wheel = () => {
         spread: 90,
         startVelocity: 30, 
     });
-
-    useEffect(() => {
-        setRotation(0);
-        setWinner(null);
-    }, [entries]);
 
     const spinWheel = () => {
         if (spinning || entries.length === 0) return;
@@ -73,7 +68,7 @@ export const Wheel = () => {
     }
 
     return (
-        <div className="flex flex-col items-center relative gap-4">
+        <div className="flex flex-col items-center relative gap-4 mb-10">
             <motion.div 
                 className="w-80 h-80 relative rounded-full overflow-hidden"
                 animate={{ rotate: rotation }}
@@ -104,7 +99,7 @@ export const Wheel = () => {
             <div className="absolute top-0 left-1/2 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-16 border-b-white transform -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
             <span id="confetti" />
             <button 
-                className="px-4 py-2 bg-(--pastel-green) border-t border-t-white text-black text-2xl rounded-2xl hover:bg-linear-to-l hover:from-(--pastel-yellow) hover:via-(--pastel-green) hover:scale-105 hover:to-(--pastel-pink) cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-4 py-2 bg-(--pastel-magenta) border-t border-t-white text-black text-2xl rounded-2xl hover:bg-linear-to-l hover:from-(--pastel-lilac) hover:via-(--pastel-magenta) hover:scale-105 hover:to-(--pastel-indigo) cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                 onClick={spinWheel}
                 disabled={spinning}
             >
