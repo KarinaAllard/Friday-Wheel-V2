@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Wheel } from "./Wheel";
-import { fetchSheetEntries, type Entry } from "./services/sheetService";
+import { fetchSheetEntries } from "./services/sheetService";
+import { type Entry } from "./models/Entry";
 
 const sheetId = "1vuf0i_XZRzcQWgKthR5V1YHGvxwg0E_AXFIderMYBps";
 function App() {
