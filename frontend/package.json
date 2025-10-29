@@ -1,6 +1,7 @@
 {
-  "name": "friday-wheel",
+  "name": "friday-wheel-v2",
   "private": true,
+  "homepage": "https://karinaallard.github.io/Friday-Wheel-V2",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

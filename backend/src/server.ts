@@ -6,8 +6,8 @@ import connectDB from "./db";
 const app = express();
 
 const allowedOrigins = [
-    "http://localhost:5173/",
-    "https://karinaallard.github.io/"
+    "http://localhost:5173",
+    "https://karinaallard.github.io"
 ];
 
 app.use(cors({
