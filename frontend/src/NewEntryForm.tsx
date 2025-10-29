@@ -17,7 +17,7 @@ export const NewEntryForm = () => {
 
 	return (
 		<form onSubmit={handleSubmit} className="flex flex-col gap-4 mb-10">
-            <div className="flex gap-2">
+            <div className="flex flex-col md:flex gap-2">
                 <label className="flex flex-col">
                     Restaurant Name:
                     <input

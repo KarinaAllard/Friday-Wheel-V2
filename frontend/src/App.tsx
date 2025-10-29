@@ -8,7 +8,7 @@ function App() {
   return (
     <EntriesProvider>
       <div className="flex flex-col min-h-screen">
-        <main className="flex max-w-full items-center m-10 flex-col flex-1 text-center pb-10">
+        <main className="flex max-w-full items-center m-4 md:m-10 flex-col flex-1 text-center pb-10">
           <div className="mb-10 flex flex-col items-center justify-center">
             <h1 className="text-7xl bg-[linear-gradient(90deg,var(--pastel-purple),var(--pastel-indigo),var(--pastel-lilac),var(--pastel-magenta),var(--pastel-teal))] bg-[length:400%_400%] animate-[gradientShift_12s_ease_infinite,pulseGlow_6s_ease-in-out_infinite] bg-clip-text text-transparent">
               Friday Wheel
