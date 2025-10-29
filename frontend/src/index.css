@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --pastel-green: #75f5c6;
-  --pastel-blue: #7591f5;
-  --pastel-pink: #ee75f5;
-  --pastel-red: #f575a2;
-  --pastel-yellow: #f5db75;
+  --pastel-purple: #a28ff5;
+  --pastel-indigo: #7f99f5;
+  --pastel-lilac: #cba0f5; 
+  --pastel-magenta: #f09cf5; 
+  --pastel-teal: #75e0f5; 
 
 }
 
@@ -30,8 +30,23 @@
   }
 }
 
+html {
+  background-color: #111111;
+}
+
 body {
-  font-family: "Caprasimo" ,Arial, Helvetica, sans-serif;
-  background-color: #111;
+  font-family: "Montserrat", Helvetica, sans-serif;
+  background: #111111;
+  background: linear-gradient(180deg,rgba(17, 17, 17, 1) 0%, rgb(13, 7, 32) 100%);
   color: #F8F8F8;
+}
+
+h1, h2 { 
+  font-family: "Caprasimo", Arial, Helvetica, sans-serif;
+}
+
+button {
+  font-weight: 800;
+  text-transform: uppercase;
+  cursor: pointer;
 }

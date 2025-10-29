@@ -1,7 +1,4 @@
-export type Entry = {
-    restaurant: string;
-    suggestedBy: string;
-}
+import { type Entry } from "../models/Entry";
 
 export async function fetchSheetEntries(sheetId: string): Promise<Entry[]> {
     const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json`;
