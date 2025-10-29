@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import type { Entry } from "./services/sheetService";
+import { type Entry } from "./models/Entry";
 import { useReward } from "react-rewards";
 
 type WheelProps = {
